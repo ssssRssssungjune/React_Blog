@@ -1,4 +1,4 @@
-//1.로딩페이지
+//1.로딩페이지1
 import './App.css';
 import {useState,useEffect} from'react';
 
