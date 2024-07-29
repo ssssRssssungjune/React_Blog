@@ -1,4 +1,4 @@
-#영화 리뷰 사이트 만들기---
+#영화 리뷰 사이트 만들기----
 
 
 # Getting Started with Create React App
