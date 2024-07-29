@@ -6,25 +6,32 @@ function App() {
   //상태변수를 설정
   const [isLoading, setIsLoading] = useState(true);
   const [loadCounter, setLoadCounter] = useState(0);
-  function IncreaseCounter(loadTimer) {
-    let _counter = loadCounter;
-    _counter = _counter + 1;
   
-    if (_counter > 10) {
-      setIsLoading(false);
-      clearImmediate(loadTimer);
-    } else {
-      setLoadCounter(_counter);
-      setIsLoading(true);
-    }
-  }
+
+
+
+
   useEffect(
     ()=>{
+
+      function IncreaseCounter(){
+        let _counter = loadCounter;
+        _counter = _counter + 1;
+        if(_counter > 10){
+          setIsLoading(false);
+          clearInterval(loadTimer);
+          
+        }
+        setLoadCounter(
+          _counter
+        );
+      }
+
       const loadTimer = setInterval(
         IncreaseCounter,1000
       );
       return()=>{ clearInterval(loadTimer); }
-    }
+    },[loadCounter]
   )
 
   return (
